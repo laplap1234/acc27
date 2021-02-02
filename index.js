@@ -272,7 +272,6 @@ client.on('message', (message) => {
                   .addField('정보', [
                     `**❯ 이름:** ${message.guild.name}`,
                     `**❯ 아이디:** ${message.guild.id}`,
-                    `**❯ 지역:** ${regions[message.guild.region]}`,
                     `**❯ 부스트 티어:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
                     `**❯ 필터:** ${filterLevels[message.guild.explicitContentFilter]}`,
                     `**❯ 보안 레벨:** ${verificationLevels[message.guild.verificationLevel]}`,
@@ -280,14 +279,9 @@ client.on('message', (message) => {
                   ])
                   .addField('통계', [
                     `**❯ 역할 수:** ${roles.length}`,
-                    `**❯ 이모지 수:** ${emojis.size}`,
-                    `**❯ 일반 이모지 수:** ${emojis.filter(emoji => !emoji.animated).size}`,
-                    `**❯ 애니매이션 이모지 수:** ${emojis.filter(emoji => emoji.animated).size}`,
                     `**❯ 총 멤버 수:** ${message.guild.memberCount}`,
                     `**❯ 유저 수:** ${members.filter(member => !member.user.bot).size}`,
                     `**❯ 봇 수:** ${members.filter(member => member.user.bot).size}`,
-                    `**❯ 채팅 채널 수:** ${channels.filter(channel => channel.type === 'text').size}`,
-                    `**❯ 음성 채널 수:** ${channels.filter(channel => channel.type === 'voice').size}`,
                     `**❯ 부스트 수:** ${message.guild.premiumSubscriptionCount || '0'}`,
                     '\u200b'
                   ])
