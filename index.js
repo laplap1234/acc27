@@ -229,73 +229,7 @@ client.on('message', (message) => {
           message.channel.send(discord)
           }})})
 
-          client.on('message', (message) => {
-            if(message.content===`서버정보`) {
-              const filterLevels = {
-                DISABLED: 'Off',
-                MEMBERS_WITHOUT_ROLES: 'No Role',
-                ALL_MEMBERS: 'Everyone'
-              };
-              
-              const verificationLevels = {
-                NONE: 'None',
-                LOW: 'Low',
-                MEDIUM: 'Medium',
-                HIGH: '(╯°□°）╯︵ ┻━┻',
-                VERY_HIGH: '┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻'
-              };
-              
-              const regions = {
-                brazil: 'Brazil',
-                europe: 'Europe',
-                hongkong: 'Hong Kong',
-                india: 'India',
-                japan: 'Japan',
-                russia: 'Russia',
-                singapore: 'Singapore',
-                southafrica: 'South Africa',
-                sydeny: 'Sydeny',
-                'us-central': 'US Central',
-                'us-east': 'US East',
-                'us-west': 'US West',
-                'us-south': 'US South'
-              };
-              const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
-                const members = message.guild.members.cache;
-                const channels = message.guild.channels.cache;
-                const emojis = message.guild.emojis.cache;
-            
-                const embed = new Discord.MessageEmbed()
-                  .setDescription(`**Guild information for __${message.guild.name}__**`)
-                  .setColor("#FF8000")
-                  .setThumbnail(message.guild.iconURL({ dynamic: true }))
-                  .addField('정보', [
-                    `**❯ 이름:** ${message.guild.name}`,
-                    `**❯ 아이디:** ${message.guild.id}`,
-                    `**❯ 부스트 티어:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
-                    `**❯ 필터:** ${filterLevels[message.guild.explicitContentFilter]}`,
-                    `**❯ 보안 레벨:** ${verificationLevels[message.guild.verificationLevel]}`,
-                    '\u200b'
-                  ])
-                  .addField('통계', [
-                    `**❯ 역할 수:** ${roles.length}`,
-                    `**❯ 총 멤버 수:** ${message.guild.memberCount}`,
-                    `**❯ 유저 수:** ${members.filter(member => !member.user.bot).size}`,
-                    `**❯ 봇 수:** ${members.filter(member => member.user.bot).size}`,
-                    `**❯ 부스트 수:** ${message.guild.premiumSubscriptionCount || '0'}`,
-                    '\u200b'
-                  ])
-                  .addField('상태', [
-                    `**❯ 온라인:** ${members.filter(member => member.presence.status === 'online').size}`,
-                    `**❯ 자리비움:** ${members.filter(member => member.presence.status === 'idle').size}`,
-                    `**❯ 다른 용무 중:** ${members.filter(member => member.presence.status === 'dnd').size}`,
-                    `**❯ 오프라인:** ${members.filter(member => member.presence.status === 'offline').size}`,
-                    '\u200b'
-                  ])
-                  .addField(`역할 [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None')
-                  .setTimestamp();
-                message.channel.send(embed);
-              }})
+          
       
 
 client.login(token);
