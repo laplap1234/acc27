@@ -119,19 +119,7 @@ client.on('message', (message) => {
 
     })
 
-    client.on('messageDelete', async message => {
-      let img = message.author.avatar ? `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp?size=256` : undefined;
-      let embed = new Discord.MessageEmbed()
-      .setTitle('메세지 삭제 로그')
-      .setColor('#FFFF')
-      .addField('지운 사람:', message.author.tag)
-      .addField('지운메세지', message.content)
-      .setFooter(message.author.tag, img)
-      .setTimestamp()
-    
-      client.channels.cache.get('809356862150934558').send(embed)
-    
-    })
+
           
     
 
