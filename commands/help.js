@@ -14,6 +14,8 @@ module.exports = {
         .addField(`${prefix}help`, '도움말을 표시합니다')
         .addField(`${prefix}청소`, '메시지를 삭제합니다 준비')
         .addField(`${prefix}ping`, '현재 핑을 표시합니다 준비')
+        .addField(`${prefix}니트로`, '랜덤니트로를 생성합니다')
+        .addField(`${prefix}세계시간`, '세계시간은 나타냅니다')
         .setTimestamp()
 
         const page2 = new Discord.MessageEmbed()
@@ -21,6 +23,7 @@ module.exports = {
         .addField(`${prefix}코로나`, '코로나 현황을 표시합니다')
         .addField(`${prefix}투표`, '투표를 합니다')
         .addField(`${prefix}서버`, '현재 서버정보가 표시됩니다')
+        .addField(`${prefix}문상`, '랜덤으로 문상을 생성합니다')
         .setTimestamp()
 
         const page3 = new Discord.MessageEmbed()
@@ -28,6 +31,7 @@ module.exports = {
         .addField(`${prefix}전체공지`, 'DM으로 전체공지를 embed 형식으로 보냅니다 준비')
         .addField(`${prefix}초대코드`, '해당 채널의 초대 코드를 표시합니다')
         .addField(`${prefix}초대코드2`, '봇이 들어가있는 모든 서버에 초대 코드를 표시합니다')
+        .addField(`${prefix}번역 쓸말`, '번역을 해줍니다')
         .setTimestamp()
 
         const pages = [
