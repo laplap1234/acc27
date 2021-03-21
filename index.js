@@ -119,21 +119,6 @@ client.on('message', (message) => {
 
     })
 
-    Client.on('message', async (message) => {
 
-      const channel = Client.cache.get('823109630069702697')
-  
-  
-    if (message.author.bot) {
-  
-      return
-  
-    } else if(message.channel.type == 'dm') {
-  
-      channel.send(`${message.author.tag} 님이 봇에게 DM 발송함`)
-      channel.send(`보낸 내용: ${message.content}`)
-      
-    }
-  })
 
 client.login(token);
