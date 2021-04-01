@@ -29,7 +29,7 @@ client.on("ready", function() {
         client.guilds.cache.forEach(function(guild) {
             MemberCount += guild.memberCount;
         });
-        client.user.setActivity(client.guilds.cache.size + "서버운영, " + MemberCount + " 사람 [" + prefix + "help]", { type: "WATCHING" });
+        client.user.setActivity(client.guilds.cache.size + "서버운영, " + MemberCount + " 명 [" + prefix + "help]", { type: "WATCHING" });
     }, 10000);
   });
 
