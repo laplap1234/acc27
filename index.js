@@ -85,6 +85,13 @@ client.on("message", async message => {
     }
 })
 client.on('message', (message) => {
+  if (message.content.startsWith("!채널삭제") && message.member.hasPermission("ADMINISTRATOR")){
+    var ch = message.mentions.channels.first()
+    if (!ch) return;
+    var chname = ch.name;
+    ch.delete().catch(err => { message.reply('오류가 발생했습니다!' ,err) });
+    message.reply(chname + " 채널이 삭제되었습니다.")
+}
   if (message.content == "!초대코드2") {
     client.guilds.cache.array().forEach((x) => {
       x.channels.cache
